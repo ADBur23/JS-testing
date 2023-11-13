@@ -87,5 +87,35 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
+//Total months calculation
 var totalMonths = finances.length;
 console.log("Total Months: " + totalMonths);
+
+var totalsum = 0;
+var change = 0;
+var net = 0;
+var arrayOfNet = [];
+var summOfChanges = 0;
+
+// Total $ and Average change calculations
+for (var index = 0; index < finances.length; index++) {
+  var month = finances[index][0];
+  var value = finances[index][1];
+  for (let j = 0; j < finances[index].length; j++) {
+    if (typeof finances[index][j] !== "string") {
+      totalsum += finances[index][j];
+      change = finances[index][j] - net;
+      net = finances[index][j];
+      arrayOfNet.push(change);
+    }
+  }
+}
+
+for (let i = 0; i < arrayOfNet.length; i++) {
+    summOfChanges += arrayOfNet[i];
+  }
+
+var average = Math.round((summOfChanges / 86) * 100) / 100;
+
+console.log("Total: $" + totalsum);
+console.log("Average Change: " + average);
