@@ -97,6 +97,7 @@ var net = 0;
 var arrayOfNet = [];
 var summOfChanges = 0;
 var greatestChange = ["", 0];
+var greatestLoss = ["", 100000000];
 
 // Total $ and Average change calculations
 for (var index = 0; index < finances.length; index++) {
@@ -109,11 +110,15 @@ for (var index = 0; index < finances.length; index++) {
       net = finances[index][j];
       arrayOfNet.push(change);
 
-      //Greatest change calculation
+      //Greatest Increase calculation
       if (change > greatestChange[1]) {
         greatestChange = [finances[index][0], finances[index][1]];
       }
 
+      //Greatest Loss Calculation
+      if (change < greatestLoss[1]) {
+        greatestLoss = [finances[index][0], finances[index][1]];
+      }
     }
   }
 }
@@ -127,3 +132,4 @@ var average = Math.round((summOfChanges / 86) * 100) / 100;
 console.log("Total: $" + totalsum);
 console.log("Average Change: " + average);
 console.log("Greatest increase in Profits: " + greatestChange);
+console.log("Greatest decrease in Profits: " + greatestLoss);
