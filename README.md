@@ -12,7 +12,7 @@ Webpage for me to test my JavaScript code.
 
 To see the work follow the above link, right click on the page and select Inspect, then continue to the Console. 
 
-![Alt text](/Images/JS-test-page.png "Anthony Burgess Portfolio Demo")
+![Alt text](/Images/JS-test-page.png "Anthony Burgess JavaScript test page")
 
 ## Credits
 
